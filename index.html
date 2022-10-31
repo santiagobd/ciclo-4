@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="num1">
+    <input type="number" name="" id="num2">
+    <input type="text" name="" id="result">
+    <input type="button" id="boton" value="resultado">
+    <script>
+        boton.addEventListener('click', sumar)
+        function sumar(){
+            var a= document.getElementById ('num1'), value;
+            var b= document.getElementById ('num2'), value;
+            
+            
+            fetch ("/add", {method: 'POST', body: JSON.stringify({a:a, b:b})})
+            .then(res=> res.json())
+            .then(res=>{
+                const result= res
+                document.getElementById ('result'),value =res.result
+            })
+
+
+        }
+    </script>
+    
+</body>
+</html>
